@@ -1,36 +1,51 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Clima Next
 
-## Getting Started
 
-First, run the development server:
+Clima Next é um projeto de previsão do tempo desenvolvido com **Next.js**, **React**, **TailwindCSS** e **TypeScript**. Ele consome a API do [WeatherAPI.com](https://www.weatherapi.com/) para exibir a previsão do tempo atual e para os próximos dias.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Funcionalidades
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Previsão do Tempo Atual:**
+  - Exibe a temperatura, condição climática, sensação térmica, umidade, velocidade do vento e visibilidade.
+  - Mostra uma imagem correspondente ao clima atual (limpo, nublado, chuvoso, nevoeiro, neve).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Previsão para os Próximos Dias:**
+  - Exibe a previsão do tempo para os próximos 5 dias, começando de amanhã.
+  - Mostra a temperatura média e a condição climática de cada dia.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Interface Moderna e Responsiva:**
+  - Design limpo e moderno com TailwindCSS.
+  - Ícones intuitivos usando a biblioteca `react-icons`.
 
-## Learn More
+## Tecnologias Utilizadas
 
-To learn more about Next.js, take a look at the following resources:
+<div align=center>
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+![My Skills](https://skillicons.dev/icons?i=nextjs,react,tailwind,typescript,git)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+</div>
 
-## Deploy on Vercel
+- [Next.js](https://nextjs.org/) - Framework React para renderização do lado do servidor (SSR) e geração de sites estáticos.
+- [React](https://reactjs.org/) - Biblioteca JavaScript para construção de interfaces de usuário.
+- [TailwindCSS](https://tailwindcss.com/) - Framework CSS utilitário para estilização rápida e responsiva.
+- [TypeScript](https://www.typescriptlang.org/) - Superset do JavaScript para adicionar tipagem estática.
+- [React Icons](https://react-icons.github.io/react-icons/) - Biblioteca de ícones para React.
+- [WeatherAPI.com](https://www.weatherapi.com/) - API para obter dados de previsão do tempo.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+# **Estrutura do Projeto**
++ ``src/app/``: Contém as páginas e rotas do Next.js.
+    +  ``page.tsx``: Página inicial com o campo de busca.   
+    + ``clima/[climaId]/page.tsx``: Página de detalhes da previsão do tempo.
++ ``src/components/``: Componentes reutilizáveis (se necessário).
++ ``src/app/api/weather/route.ts``: Rota da API para buscar dados do WeatherAPI.com.
++ ``public/``: Contém imagens e arquivos estáticos.
++ ``tailwind.config.js``: Configuração do TailwindCSS.
++ ``postcss.config.js``: Configuração do PostCSS.
+
+---
+
+# **Licença**
+
+Este projeto está licenciado sob a licença MIT
