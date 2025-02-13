@@ -14,7 +14,7 @@ export async function GET(request: Request) {
 
   try {
     const response = await fetch(
-      `http://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${location}&days=${days}&lang=pt`
+      `http://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${location}&days=8&lang=pt`
     );
     const data = await response.json();
 

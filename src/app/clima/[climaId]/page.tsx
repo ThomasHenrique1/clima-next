@@ -170,29 +170,32 @@ export default function ClimaDetail() {
         </div>
 
         {/* Previsão para os Próximos Dias */}
-        <div className="mt-8">
-          <h2 className="text-2xl font-semibold text-gray-800 mb-6">
-            Previsão para os Próximos Dias
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            {weatherData.forecast.forecastday.map((day: any, index: number) => (
-              <div key={index} className="bg-white p-4 rounded-lg shadow-sm">
-                <p className="text-lg font-medium text-gray-700">
-                  {new Date(day.date).toLocaleDateString('pt-BR', { weekday: 'long' })}
-                </p>
-                <img
-                  src={getWeatherImage(day.day.condition.text)}
-                  alt={day.day.condition.text}
-                  className="w-16 h-16 mx-auto my-2"
-                />
-                <p className="text-gray-600">{day.day.condition.text}</p>
-                <p className="text-xl font-bold text-gray-800">
-                  {day.day.avgtemp_c}°C
-                </p>
-              </div>
-            ))}
-          </div>
+          {/* Previsão para os Próximos Dias */}
+<div className="mt-8">
+  <h2 className="text-2xl font-semibold text-gray-800 mb-6">
+    Previsão para os Próximos Dias
+  </h2>
+  <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+    {weatherData.forecast.forecastday
+      .slice(2, 7) // Pula o dia atual e pega os próximos 5 dias
+      .map((day: any, index: number) => (
+        <div key={index} className="bg-white p-4 rounded-lg shadow-sm">
+          <p className="text-lg font-medium text-gray-700">
+            {new Date(day.date).toLocaleDateString('pt-BR', { weekday: 'long' })}
+          </p>
+          <img
+            src={getWeatherImage(day.day.condition.text)}
+            alt={day.day.condition.text}
+            className="w-16 h-16 mx-auto my-2"
+          />
+          <p className="text-gray-600">{day.day.condition.text}</p>
+          <p className="text-xl font-bold text-gray-800">
+            {day.day.avgtemp_c}°C
+          </p>
         </div>
+      ))}
+  </div>
+</div>
       </div>
     </div>
   );
